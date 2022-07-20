@@ -4,45 +4,31 @@ import java.util.Random;
 
 public class Dice {
 
+    Integer integer;
+    Random rand = new Random();
+    Integer sum;
 
-    public void roll() {
-        Random rand = new Random();
-        int tries = 0;
-        ArrayList<Integer> x = new ArrayList<>();
+    public Dice() {
+        this.integer = Integer.MAX_VALUE;
+        this.sum = Integer.MAX_VALUE;
+    }
 
-
-        int sum = 0;
-        for(int i = 0; i<100; i++) {
-            // roll the dice once
-            int roll1 = rand.nextInt(6) + 1;
-            int roll2 = rand.nextInt(6) + 1;
-            sum = roll1 + roll2;
-            x.add(sum);
+    public Dice(Integer integer) {
+        this.integer = integer;
+    }
 
 
-            System.out.println(roll1 + "+" + roll2 + " =" + sum);
-            System.out.println(x);
+    public Integer tossAndSum() {
+        if(this.integer==2) {
+            Integer sum1 = rand.nextInt(7-1)+1;
+            Integer sum2 = rand.nextInt(7-1)+1;
+            return this.sum = sum1 + sum2;
         }
-
-
-
-
+        return null;
     }
 
 
-
-
-
-
-
-
-
-
-    }
-
-
-
-
+}
 
 
 
